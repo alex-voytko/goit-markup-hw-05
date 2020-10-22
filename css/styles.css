@@ -30,9 +30,13 @@ ul {
     width: 1200px;
     display: block;
 }
-.header-container {
+.header-container,
+.header-container.portfolio {
     margin: 0 auto;
     background-color: var(--title-text-color);
+}
+.header-container.portfolio {
+    outline: solid #ECECEC;
 }
 .header-wrapper {
     display: flex;
@@ -40,7 +44,7 @@ ul {
     align-items: center;
 }
 .web {
-    font-family: Raleway;
+    font-family: 'Raleway';
     font-weight: 700;
     font-size: 26px;
     line-height: 1.192;
@@ -62,6 +66,7 @@ ul {
     box-sizing: border-box;
 }
 .navigation-menu .link {
+    box-sizing: border-box;
     font-weight: 500;
     font-size: 14px;
     line-height: 1.143;
@@ -70,15 +75,15 @@ ul {
 }
 .navigation-menu .link.active {
     color: var(--accent-color);
-}    
-.navigation-menu .item.active {
-    box-sizing: border-box;
-    border-bottom: 4px solid var(--accent-color);
 }
 .navigation-menu .item {
     display: block;
+    box-sizing: border-box;
     padding: 31px 0;
     margin-right: 50px;
+}
+.navigation-menu .item.active::after {
+
 }
 .navigation-menu .item:last-child {
     margin: 0;
@@ -144,7 +149,7 @@ ul {
     text-transform: uppercase;
     color: var(--title-text-color);
 }
-.section-1 div > button {
+.section-1 .main-button {
     display: block;
     width: 200px;
     height: 50px;
@@ -158,7 +163,7 @@ ul {
     letter-spacing: 0.06em;
     color: var(--title-text-color);
 }
-.section-1 div > button:hover {
+.section-1 .main-button:hover {
     cursor: pointer;
 }
 .section-2,
@@ -226,7 +231,6 @@ ul {
     position: relative;
     display: flex;
     justify-content: center;
-    z-index: 1;
 }
 .section-3 h2,
 .section-4 h2,
@@ -246,7 +250,6 @@ ul {
     width: 370px;
     bottom: 0;
     padding: 27px 0;
-    z-index: 2;
     font-style: normal;
     font-weight: bold;
     font-size: 14px;
@@ -277,8 +280,25 @@ ul {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    z-index: 3;
+    border-radius: 4px;
     background-color: var(--title-text-color);
+    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+}
+.modal button {
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    top: 8px;
+    right: 8px;
+    border-radius: 50%;
+    background: #FFFFFF;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    background-image: url(../img/svg/close-modal.svg);
+    background-position: center;
+    background-repeat: no-repeat;
+}
+.modal button:hover {
+    cursor: pointer;
 }
 .section-4 {
     padding: 94px 0;
@@ -445,7 +465,6 @@ address li:last-child {
     padding-top: 12px;
 }
 .follow-us-container p {
-    font-family: Roboto;
     font-style: normal;
     font-weight: bold;
     font-size: 14px;
@@ -528,12 +547,42 @@ address li:last-child {
     margin-right: 30px;
     margin-bottom: 30px;
 }
+.projects-list .item a {
+    position: relative;
+}
 .projects-list img {
     display: block;
 }
-.projects-list a {
+.pop-up-container {
+    display: flex;
+    position: relative;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+.pop-up-container p {
+    position: absolute;
+    display: flex;
+    align-items: center;
     width: 370px;
-    display: block;
+    height: 294px;
+    padding: 0 24px;
+    top: 100%;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 18px;
+    line-height: 1,556;
+    letter-spacing: 0.03em;
+    color: #FFFFFF;
+    background: rgba(33, 150, 243, 0.9);
+    transition: all cubic-bezier(0.4, 0, 0.2, 1);
+}
+.projects-list .item:nth-child(1):hover .pop-up-container p,
+.projects-list .item:nth-child(1):focus .pop-up-container p {
+    transform: translate(0, -100%);
+    transition-duration: 250ms;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    opacity: 100%;
 }
 .projects-list .item:nth-child(3),
 .projects-list .item:nth-child(6),
@@ -544,7 +593,7 @@ address li:last-child {
     margin-bottom: 0;
 }
 .projects-list .item:hover,
-.projects-list .item a:focus {
+.projects-list .item:focus a {
     box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 
                 0px 4px 4px rgba(0, 0, 0, 0.06), 
                 1px 4px 6px rgba(0, 0, 0, 0.16);
@@ -557,7 +606,7 @@ address li:last-child {
     color: var(--primary-text-color);
     margin-bottom: 4px;
 }
-.projects-list p {
+.card-content p {
     font-weight: 400;
     font-size: 16px;
     line-height: 1.875;
@@ -566,6 +615,7 @@ address li:last-child {
 }
 .card-content {
     box-sizing: border-box;
+    z-index: 10;
     padding: 20px 24px;
     border-left: 1px solid #EEEEEE;
     border-right: 1px solid #EEEEEE;
