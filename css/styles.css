@@ -13,8 +13,7 @@
     margin: 0;
     padding: 0;
 }
-*:hover,
-*:focus {
+
     transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 body {
@@ -80,6 +79,7 @@ ul {
     line-height: 1.143;
     letter-spacing: 0.02em;
     color: var(--primary-text-color);
+    transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .navigation-menu .link.active::after {
     content: "";
@@ -125,6 +125,7 @@ ul {
     fill:  var(--icon-color);
     margin-right: 10px;
     background-position: center;
+    transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .contacts-list a:hover svg,
 .contacts-list a:focus svg {
@@ -142,6 +143,7 @@ ul {
     letter-spacing: 0.02em;
     color: var(--secondary-text-color);
     list-style: none;
+    transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .contacts-list .link:hover,
 .contacts-list .link:focus {
@@ -373,6 +375,7 @@ ul {
     height: 44px;
     border-radius: 50%;
     margin-right: 10px;
+    transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .section-4 .social-links-icons li a {
     display: flex;
@@ -380,9 +383,11 @@ ul {
     justify-content: center;
     width: 44px;
     height: 44px;
+    transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .section-4 svg {
     fill: var(--icon-color);
+    transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .section-4 .social-links-icons li:nth-child(4) {
     margin-right: 0;
@@ -406,8 +411,6 @@ ul {
 }
 .section-5 ul li {
     margin-right: 30px;
-    border: 1px solid #AFB1B8;
-    border-radius: 4px;
 }
 .section-5 ul li:last-child {
     margin-right: 0;
@@ -418,20 +421,24 @@ ul {
     justify-content: center;
     width: 170px;
     height: 90px;
+    border: 1px solid #AFB1B8;
+    border-radius: 4px;
+    transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .section-5 svg {
     fill: var(--icon-color);
+    transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .section-5 a:hover svg {
     fill: var(--accent-color);
 }
-.section-5 li:hover {
+.section-5 a:hover {
     border: 1px solid var(--accent-color);
+    border-radius: 4px;
 }
 .section-5 a:focus svg {
     fill: var(--accent-color);
 }
-.section-5 li:focus,
 .section-5 li a:focus {
     border: 1px solid var(--accent-color);
 }
@@ -496,8 +503,6 @@ address li:last-child {
 }
 .footer-social-links li {
     margin-left: 10px;
-    background-color: rgba(255, 255, 255, 0.1);
-    border-radius: 50%;
 }
 .footer-social-links li a {
     display: flex;
@@ -506,14 +511,17 @@ address li:last-child {
     width: 44px;
     height: 44px;
     fill: var(--title-text-color);
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 50%;
+    transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .footer-social-links li:first-child {
     margin-left: 0;
 }
-.footer-social-links li:hover {
+.footer-social-links a:hover {
     background-color: var(--accent-color);
 }
-.footer-social-links li a:focus {
+.footer-social-links a:focus {
     background-color: var(--accent-color);
     border-radius: 50%;
 }
@@ -544,6 +552,7 @@ address li:last-child {
     padding: 6px 22px;
     border: none;
     border-radius: 4px;
+    transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .portfolio-button:hover,
 .portfolio-button:focus {
@@ -562,6 +571,7 @@ address li:last-child {
     width: 370px;
     margin-right: 30px;
     margin-bottom: 30px;
+    transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .projects-list .item a {
     position: relative;
@@ -592,7 +602,7 @@ address li:last-child {
     letter-spacing: 0.03em;
     color: #FFFFFF;
     background: rgba(33, 150, 243, 0.9);
-    transition: all cubic-bezier(0.4, 0, 0.2, 1);
+    transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .projects-list .item:nth-child(1):hover .pop-up-container p,
 .projects-list .item:nth-child(1):focus .pop-up-container p {
@@ -610,12 +620,12 @@ address li:last-child {
     margin-bottom: 0;
 }
 .projects-list .item:hover,
-.projects-list .item:focus a {
+.projects-list .item a:focus {
     box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 
                 0px 4px 4px rgba(0, 0, 0, 0.06), 
                 1px 4px 6px rgba(0, 0, 0, 0.16);
 }
-.projects-list h2 {
+.card-content .project-title {
     font-weight: 700;
     font-size: 18px;
     line-height: 2.0;
